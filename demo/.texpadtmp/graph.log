@@ -1,0 +1,392 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdftex 2012.6.30)  16 JUN 2015 18:57
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex
+(/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:1: Undefined control sequence.
+l.1 \draw
+         [edge] (22) to node[lab]{1} (20);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:2: Undefined control sequence.
+l.2 \draw
+         [edge] (22) to node[lab]{1} (21);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:3: Undefined control sequence.
+l.3 \draw
+         [edge] (23) to node[lab]{1} (19);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:4: Undefined control sequence.
+l.4 \draw
+         [edge] (23) to node[lab]{1} (21);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:5: Undefined control sequence.
+l.5 \draw
+         [edge] (24) to node[lab]{1} (19);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:6: Undefined control sequence.
+l.6 \draw
+         [edge] (24) to node[lab]{1} (20);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:7: Undefined control sequence.
+l.7 \draw
+         [edge] (25) to node[lab]{1} (17);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:8: Undefined control sequence.
+l.8 \draw
+         [edge] (25) to node[lab]{1} (18);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:9: Undefined control sequence.
+l.9 \draw
+         [edge] (26) to node[lab]{1} (17);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:10: Undefined control sequence.
+l.10 \draw
+          [edge] (26) to node[lab]{1} (18);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:11: Undefined control sequence.
+l.11 \draw
+          [edge] (27) to node[lab]{1} (15);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:12: Undefined control sequence.
+l.12 \draw
+          [edge] (27) to node[lab]{1} (16);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:13: Undefined control sequence.
+l.13 \draw
+          [edge] (28) to node[lab]{1} (15);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:14: Undefined control sequence.
+l.14 \draw
+          [edge] (28) to node[lab]{1} (16);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:15: Undefined control sequence.
+l.15 \draw
+          [edge] (29) to node[lab]{1} (13);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:16: Undefined control sequence.
+l.16 \draw
+          [edge] (29) to node[lab]{1} (14);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:17: Undefined control sequence.
+l.17 \draw
+          [edge] (30) to node[lab]{1} (13);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:18: Undefined control sequence.
+l.18 \draw
+          [edge] (30) to node[lab]{1} (14);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:19: Undefined control sequence.
+l.19 \draw
+          [edge] (31) to node[lab]{1} (11);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:20: Undefined control sequence.
+l.20 \draw
+          [edge] (31) to node[lab]{1} (12);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:21: Undefined control sequence.
+l.21 \draw
+          [edge] (32) to node[lab]{1} (11);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:22: Undefined control sequence.
+l.22 \draw
+          [edge] (32) to node[lab]{1} (12);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:23: Undefined control sequence.
+l.23 \draw
+          [edge] (33) to node[lab]{1} (9);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:24: Undefined control sequence.
+l.24 \draw
+          [edge] (33) to node[lab]{1} (10);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:25: Undefined control sequence.
+l.25 \draw
+          [edge] (34) to node[lab]{1} (9);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:26: Undefined control sequence.
+l.26 \draw
+          [edge] (34) to node[lab]{1} (10);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:27: Undefined control sequence.
+l.27 \draw
+          [edge] (35) to node[lab]{1} (7);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:28: Undefined control sequence.
+l.28 \draw
+          [edge] (35) to node[lab]{1} (8);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:29: Undefined control sequence.
+l.29 \draw
+          [edge] (36) to node[lab]{1} (7);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:30: Undefined control sequence.
+l.30 \draw
+          [edge] (36) to node[lab]{1} (8);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:31: Undefined control sequence.
+l.31 \draw
+          [edge] (37) to node[lab]{1} (5);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:32: Undefined control sequence.
+l.32 \draw
+          [edge] (37) to node[lab]{1} (6);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:33: Undefined control sequence.
+l.33 \draw
+          [edge] (38) to node[lab]{1} (5);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:34: Undefined control sequence.
+l.34 \draw
+          [edge] (38) to node[lab]{1} (6);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:35: Undefined control sequence.
+l.35 \draw
+          [edge] (39) to node[lab]{1} (3);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:36: Undefined control sequence.
+l.36 \draw
+          [edge] (39) to node[lab]{1} (4);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:37: Undefined control sequence.
+l.37 \draw
+          [edge] (40) to node[lab]{1} (3);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:38: Undefined control sequence.
+l.38 \draw
+          [edge] (40) to node[lab]{1} (4);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:39: Undefined control sequence.
+l.39 \draw
+          [edge] (41) to node[lab]{1} (1);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:40: Undefined control sequence.
+l.40 \draw
+          [edge] (41) to node[lab]{1} (2);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:41: Undefined control sequence.
+l.41 \draw
+          [edge] (42) to node[lab]{1} (1);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/PetarV/Desktop/mgitweek/mgitweek2/simplex/demo/Simplex-TSP-Solver/demo/graph.tex:42: Undefined control sequence.
+l.42 \draw
+          [edge] (42) to node[lab]{1} (2);
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+)
+! Emergency stop.
+<*> ...plex/demo/Simplex-TSP-Solver/demo/graph.tex
+                                                  
+*** (job aborted, no legal \end found)
+
+!  ==> Fatal error occurred, no output PDF file produced!
