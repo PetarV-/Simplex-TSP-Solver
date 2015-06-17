@@ -174,7 +174,7 @@ int main()
         printf("- SOLVE : to launch the Simplex Algorithm on the constraints given thus far;\n");
         printf("- REM_LOOP N x_1 x_2 ... x_N : to add a loop-removing constraint for the subset of N nodes x_1, x_2, ..., x_N;\n");
         printf("- SET x_1 x_2 v : to add constraints that set the edge between x_1 and x_2 to v (where v is either 0 or 1);\n");
-        printf("- UNDO : to remove the previously generated constraint(s)");
+        printf("- UNDO N : to remove the N previously generated constraint sets");
         printf("- EXIT : to stop the program.\n");
         scanf("%s", cmd);
         
@@ -334,16 +334,28 @@ int main()
         
         else if (strcmp(cmd, "UNDO") == 0)
         {
-            if (positions.empty())
+            int steps;
+            scanf("%d", &steps);
+            
+            bool done = true;
+            
+            while (steps--)
             {
-                printf("There's nothing to undo!\n");
-                continue;
+                if (positions.empty())
+                {
+                    printf("There's nothing to undo!\n");
+                    print_delimiter();
+                    done = false;
+                    break;
+                }
+            
+                curr_pos = positions.top();
+                positions.pop();
             }
             
-            curr_pos = positions.top();
-            positions.pop();
+            if (!done) continue;
             
-            printf("Previous generated constraint(s) removed!\n");
+            printf("Previous generated constraint set(s) removed!\n");
             print_delimiter();
         }
         
