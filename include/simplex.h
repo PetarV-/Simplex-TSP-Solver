@@ -30,7 +30,7 @@
  - the vector c = [c_1, c_2, ..., c_n] and the constant v.
  
  Complexity:    O(m^(n/2)) worst case
- O(n + m) average case (common)
+                O(n + m) average case (common)
 */
 
 class Simplex
