@@ -201,6 +201,13 @@ int main()
             Simplex *s = new Simplex(simp_n, constr_n, A, b, c, 0);
             pair<vector<double>, double> ret = s -> simplex();
             
+            while (isnan(ret.second))
+            {
+                delete s;
+                s = new Simplex(simp_n, constr_n, A, b, c, 0);
+                ret = s -> simplex();
+            }
+            
             delete s;
             for (int i=0;i<constr_n;i++) delete[] A[i];
             delete[] A;
