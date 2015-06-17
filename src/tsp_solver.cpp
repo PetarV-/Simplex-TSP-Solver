@@ -41,6 +41,9 @@ double c[MAX_N * MAX_N];
 vector<vector<double> > Ap;
 vector<double> bp;
 
+int curr_pos = 0;
+stack<int> positions;
+
 inline void print_delimiter()
 {
     printf("---------------------------------------------------------------\n");
@@ -70,6 +73,8 @@ inline void dump_edge(int x, double val)
 
 int main()
 {
+    srand(time(NULL));
+    
     printf("Linear Programming TSP Solver, implemented by Petar Veličković.\n");
     printf("Special thanks to Thomas Sauerwald!\n");
     print_delimiter();
@@ -154,6 +159,8 @@ int main()
         bp.push_back(1.0);
     }
     
+    curr_pos = Ap.size();
+    
     printf("Constraints generated!\n");
     print_delimiter();
     
@@ -167,12 +174,13 @@ int main()
         printf("- SOLVE : to launch the Simplex Algorithm on the constraints given thus far;\n");
         printf("- REM_LOOP N x_1 x_2 ... x_N : to add a loop-removing constraint for the subset of N nodes x_1, x_2, ..., x_N;\n");
         printf("- SET x_1 x_2 v : to add constraints that set the edge between x_1 and x_2 to v (where v is either 0 or 1);\n");
+        printf("- UNDO : to remove the previously generated constraint(s)");
         printf("- EXIT : to stop the program.\n");
         scanf("%s", cmd);
         
         if (strcmp(cmd, "SOLVE") == 0)
         {
-            int constr_n = Ap.size();
+            int constr_n = curr_pos;
             
             double **A = new double*[constr_n];
             for (int i=0;i<constr_n;i++)
@@ -252,8 +260,19 @@ int main()
             
             double val = num - 1.0;
             
-            Ap.push_back(constr);
-            bp.push_back(val);
+            if (curr_pos == (int)Ap.size())
+            {
+                Ap.push_back(constr);
+                bp.push_back(val);
+            }
+            else
+            {
+                Ap[curr_pos] = constr;
+                bp[curr_pos] = val;
+            }
+            
+            positions.push(curr_pos);
+            curr_pos++;
             
             printf("Loop-removing constraint added!\n");
             print_delimiter();
@@ -278,16 +297,53 @@ int main()
                 constr2[encode_edge(y, x)] = 1.0;
             }
             
-            Ap.push_back(constr1);
-            bp.push_back(v);
+            positions.push(curr_pos);
+            
+            if (curr_pos == (int)Ap.size())
+            {
+                Ap.push_back(constr1);
+                bp.push_back(v);
+            }
+            else
+            {
+                Ap[curr_pos] = constr1;
+                bp[curr_pos] = v;
+            }
+            
+            curr_pos++;
             
             if (v == 1)
             {
-                Ap.push_back(constr2);
-                bp.push_back(-1.0);
+                if (curr_pos == (int)Ap.size())
+                {
+                    Ap.push_back(constr2);
+                    bp.push_back(-1.0);
+                }
+                else
+                {
+                    Ap[curr_pos] = constr2;
+                    bp[curr_pos] = -1.0;
+                }
+                
+                curr_pos++;
             }
             
             printf("Value setting constraints added!\n");
+            print_delimiter();
+        }
+        
+        else if (strcmp(cmd, "UNDO") == 0)
+        {
+            if (positions.empty())
+            {
+                printf("There's nothing to undo!\n");
+                continue;
+            }
+            
+            curr_pos = positions.top();
+            positions.pop();
+            
+            printf("Previous generated constraint(s) removed!\n");
             print_delimiter();
         }
         

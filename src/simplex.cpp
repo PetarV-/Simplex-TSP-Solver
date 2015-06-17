@@ -21,6 +21,8 @@ typedef long long lld;
 typedef unsigned long long llu;
 using namespace std;
 
+int total_steps = 0;
+
 Simplex::Simplex(int n, int m, double **A, double *b, double *c, double v) : n(n), m(m), v(v)
 {
     this -> A = new double*[m];
@@ -63,6 +65,7 @@ Simplex::~Simplex()
 void Simplex::pivot(int x, int y)
 {
     //printf("Pivoting variable %d around constraint %d.\n", y, x);
+    total_steps++;
     
     // first rearrange the x-th row
     for (int j=0;j<n;j++)
@@ -128,19 +131,25 @@ int Simplex::iterate_simplex()
     
     double v_prev = v;
     
-    int ind = -1, best_var = -1;
+    vector<int> vars;
+    int best_var = -1;
     for (int j=0;j<n;j++)
     {
         if (c[j] > 0)
         {
+            vars.push_back(j);
+            /* Bland's Rule
             if (best_var == -1 || N[j] < ind)
             {
                 ind = N[j];
                 best_var = j;
             }
+            */
         }
     }
-    if (ind == -1) return 1;
+    if (vars.empty()) return 1;
+    
+    best_var = vars[rand() % vars.size()];
     
     double max_constr = INFINITY;
     int best_constr = -1;
@@ -159,7 +168,7 @@ int Simplex::iterate_simplex()
     if (isinf(max_constr)) return -1;
     else pivot(best_constr, best_var);
     
-    // underflow avoiding: zero-out all entries lesser than 1e-9
+    // underflow avoiding: round all entries that are at most 1e-3 away from an integer
     for (int i=0;i<m;i++)
     {
         for (int j=0;j<n;j++)
@@ -192,7 +201,10 @@ int Simplex::iterate_simplex()
 // Returns 0 if OK, -1 if INFEASIBLE
 int Simplex::initialise_simplex()
 {
-    int k = -1, min_b = -1;
+    total_steps = 0;
+    
+    int k = -1;
+    double min_b = -1;
     for (int i=0;i<m;i++)
     {
         if (k == -1 || b[i] < min_b)
@@ -333,6 +345,8 @@ pair<vector<double>, double> Simplex::simplex()
     {
         ret[B[i]] = b[i];
     }
+    
+    printf("Finished in %d iterations.\n", total_steps);
     
     return make_pair(ret, v);
 }
