@@ -7,6 +7,7 @@
 #include <math.h>
 #include <string.h>
 #include <assert.h>
+#include <unistd.h>
 #include <iostream>
 #include <vector>
 #include <list>
@@ -26,10 +27,12 @@ typedef long long lld;
 typedef unsigned long long llu;
 using namespace std;
 
-char path_adj[150], path_graph[150];
+char path_adj[150], path_demo[150], file_graph[150], file_map[150];
+char path_graph[150], path_map[150];
 FILE *f_adj, *f_graph;
 
 char cmd[150];
+char cmd_map[150];
 
 int n;
 double adj[MAX_N][MAX_N];
@@ -164,9 +167,23 @@ int main()
     printf("Constraints generated!\n");
     print_delimiter();
     
-    printf("Enter the path to the file containing the graph:\n");
-    scanf("%s", path_graph);
+    printf("Enter the path to the folder containing the demo .tex files:\n");
+    scanf("%s", path_demo);
     print_delimiter();
+    
+    printf("Enter the name of the file containing the graph:\n");
+    scanf("%s", file_graph);
+    print_delimiter();
+    
+    strcpy(path_graph, path_demo);
+    strcat(path_graph, file_graph);
+    
+    printf("Enter the name of the file containing the map:\n");
+    scanf("%s", file_map);
+    print_delimiter();
+    
+    strcpy(path_map, path_demo);
+    strcat(path_map, file_map);
     
     while (true)
     {
@@ -240,7 +257,13 @@ int main()
             
                 fclose(f_graph);
             
-                printf("Results written to the graph file!\n");
+                printf("Results written to the graph file! Compiling the map...\n");
+                
+                sprintf(cmd_map, "(cd %s && exec pdflatex %s &> /dev/null)", path_demo, file_map);
+                
+                system(cmd_map);
+                
+                printf("Map compiled!\n");
             }
             
             print_delimiter();
