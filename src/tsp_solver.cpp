@@ -200,7 +200,7 @@ int main()
         printf("- REM_LOOP_RNG lo hi : to add a loop-removing constraint for the contiguous interval of nodes [lo, hi];\n");
         printf("- SET x_1 x_2 v : to add constraints that set the edge between x_1 and x_2 to v (where v is either 0 or 1);\n");
         printf("- UNDO N : to remove the N previously generated constraint sets;\n");
-        printf("- APPROX_MST : to run the MST approximation algorithm and exit;\n");
+        printf("- APPROX_MST : to run the MST-based 2-approximation algorithm;\n");
         printf("- EXIT : to stop the program.\n");
         scanf("%s", cmd);
         
@@ -468,7 +468,7 @@ int main()
             system(cmd_map);
             
             printf("Map compiled!\n");
-            break;
+            print_delimiter();
         }
         
         else if (strcmp(cmd, "EXIT") == 0)
