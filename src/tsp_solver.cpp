@@ -19,12 +19,14 @@
 #include <map>
 #include <complex>
 
+#include <mst.h>
 #include <simplex.h>
 
 #define MAX_N 5001
 
 typedef long long lld;
 typedef unsigned long long llu;
+typedef unsigned int uint;
 using namespace std;
 
 char path_adj[150], path_demo[150], file_graph[150], file_map[150];
@@ -72,6 +74,11 @@ inline pair<int, int> decode_edge(int x)
 inline void dump_edge(int x, double val)
 {
     fprintf(f_graph, "\\draw[edge] (%d) to node[lab]{%g} (%d);\n", decode_edge(x).first, val, decode_edge(x).second);
+}
+
+inline void write_full_edge(int x, int y)
+{
+    fprintf(f_graph, "\\draw[edge] (%d) to node[lab]{%d} (%d);\n", x, 1, y);
 }
 
 int main()
@@ -190,8 +197,10 @@ int main()
         printf("Enter one of the following:\n");
         printf("- SOLVE : to launch the Simplex Algorithm on the constraints given thus far;\n");
         printf("- REM_LOOP N x_1 x_2 ... x_N : to add a loop-removing constraint for the subset of N nodes x_1, x_2, ..., x_N;\n");
+        printf("- REM_LOOP_RNG lo hi : to add a loop-removing constraint for the contiguous interval of nodes [lo, hi];\n");
         printf("- SET x_1 x_2 v : to add constraints that set the edge between x_1 and x_2 to v (where v is either 0 or 1);\n");
         printf("- UNDO N : to remove the N previously generated constraint sets;\n");
+        printf("- APPROX_MST : to run the MST approximation algorithm and exit;\n");
         printf("- EXIT : to stop the program.\n");
         scanf("%s", cmd);
         
@@ -308,6 +317,48 @@ int main()
             print_delimiter();
         }
         
+        else if (strcmp(cmd, "REM_LOOP_RNG") == 0)
+        {
+            int lo, hi;
+            scanf("%d%d", &lo, &hi);
+            
+            assert(hi >= lo);
+            
+            int num = hi - lo + 1;
+            vector<int> vals(num);
+            for (int i=0;i<num;i++) vals[i] = lo + i;
+            
+            vector<double> constr(simp_n, 0.0);
+            
+            for (int i=0;i<num;i++)
+            {
+                for (int j=i+1;j<num;j++)
+                {
+                    if (vals[i] > vals[j]) constr[encode_edge(vals[i], vals[j])] = -1.0;
+                    else if (vals[i] < vals[j]) constr[encode_edge(vals[j], vals[i])] = -1.0;
+                }
+            }
+            
+            double val = num - 1.0;
+            
+            if (curr_pos == (int)Ap.size())
+            {
+                Ap.push_back(constr);
+                bp.push_back(val);
+            }
+            else
+            {
+                Ap[curr_pos] = constr;
+                bp[curr_pos] = val;
+            }
+            
+            positions.push(curr_pos);
+            curr_pos++;
+            
+            printf("Loop-removing constraint added!\n");
+            print_delimiter();
+        }
+        
         else if (strcmp(cmd, "SET") == 0)
         {
             // x(i, j) = v
@@ -387,6 +438,37 @@ int main()
             
             printf("Previous generated constraint set(s) removed!\n");
             print_delimiter();
+        }
+        
+        else if (strcmp(cmd, "APPROX_MST") == 0)
+        {
+            auto mst_sol = tsp_mst(n, adj);
+            
+            printf("Objective value: %lf\n", mst_sol.first);
+            
+            //for (int i=0;i<simp_n;i++) if (ret.first[i] != 0) cout << ret.first[i] << endl;
+            
+            if ((f_graph = fopen(path_graph, "w")) == NULL)
+            {
+                printf("Error: Graph file could not be opened!\n");
+                return 4;
+            }
+            
+            for (uint i=0;i<mst_sol.second.size();i++)
+            {
+                write_full_edge(mst_sol.second[i].first, mst_sol.second[i].second);
+            }
+            
+            fclose(f_graph);
+            
+            printf("Results written to the graph file! Compiling the map...\n");
+            
+            sprintf(cmd_map, "(cd %s && exec pdflatex %s &> /dev/null)", path_demo, file_map);
+            
+            system(cmd_map);
+            
+            printf("Map compiled!\n");
+            break;
         }
         
         else if (strcmp(cmd, "EXIT") == 0)
