@@ -297,11 +297,12 @@ int main()
                 printf("Map compiled!\n");
                 
                 // These shell instructions will work only on OS X
-                sprintf(cmd_prev, "(killall Preview &> /dev/null); open -a Preview %s &", path_pdf);
+                sprintf(cmd_prev, "qlmanage -p %s &> /dev/null &", path_pdf);
                 
                 printf("%s\n", cmd_prev);
                 
                 system(cmd_prev);
+
             }
             
             print_delimiter();
@@ -499,7 +500,7 @@ int main()
             printf("Map compiled!\n");
             
             // These shell instructions will work only on OS X
-            sprintf(cmd_prev, "(killall Preview &> /dev/null); open -a Preview %s &", path_pdf);
+            sprintf(cmd_prev, "qlmanage -p %s &> /dev/null &", path_pdf);
             
             printf("%s\n", cmd_prev);
             
