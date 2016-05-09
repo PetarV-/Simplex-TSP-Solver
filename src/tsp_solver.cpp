@@ -31,11 +31,12 @@ typedef unsigned int uint;
 using namespace std;
 
 char path_adj[150], path_demo[150], file_graph[150], file_map[150];
-char path_graph[150], path_map[150];
+char path_graph[150], path_map[150], path_pdf[150];
 FILE *f_adj, *f_graph;
 
 char cmd[150];
 char cmd_map[150];
+char cmd_prev[150];
 
 int n;
 double adj[MAX_N][MAX_N];
@@ -80,6 +81,22 @@ inline void dump_edge(int x, double val)
 inline void write_full_edge(int x, int y)
 {
     fprintf(f_graph, "\\draw[edge] (%d) to node[lab]{%d} (%d);\n", x, 1, y);
+}
+
+char *rep_ext(char *name, const char *ext)
+{
+    char *ret = new char[150];
+    strcpy(ret, name);
+    int ii = strlen(ret) - 1;
+    while (ii >= 0 && ret[ii] != '.') ii--;
+    assert(ii >= 0);
+    int l = strlen(ext);
+    for (int i=0;i<=l;i++) // takes care of '\0' at the end as well
+    {
+        ret[ii + i] = ext[i];
+    }
+    
+    return ret;
 }
 
 int main()
@@ -193,6 +210,10 @@ int main()
     strcpy(path_map, path_demo);
     strcat(path_map, file_map);
     
+    strcpy(path_pdf, path_demo);
+    strcat(path_pdf, rep_ext(file_map, ".pdf"));
+    
+    
     while (true)
     {
         printf("Enter one of the following:\n");
@@ -274,6 +295,13 @@ int main()
                 system(cmd_map);
                 
                 printf("Map compiled!\n");
+                
+                // These shell instructions will work only on OS X
+                sprintf(cmd_prev, "(killall Preview &> /dev/null); open -a Preview %s &", path_pdf);
+                
+                printf("%s\n", cmd_prev);
+                
+                system(cmd_prev);
             }
             
             print_delimiter();
@@ -469,6 +497,14 @@ int main()
             system(cmd_map);
             
             printf("Map compiled!\n");
+            
+            // These shell instructions will work only on OS X
+            sprintf(cmd_prev, "(killall Preview &> /dev/null); open -a Preview %s &", path_pdf);
+            
+            printf("%s\n", cmd_prev);
+            
+            system(cmd_prev);
+            
             print_delimiter();
         }
         
