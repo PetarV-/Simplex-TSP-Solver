@@ -192,7 +192,7 @@ int Simplex::iterate_simplex()
     if (fabs(ceil(v) - v) < EPS) v = ceil(v);
     if (fabs(floor(v) - v) < EPS) v = floor(v);
     
-    if (fabs(v - v_prev) > EPS) cout << v << endl;
+    if (fabs(v - v_prev) > EPS) cout << "Iteration " << total_steps << ": " << v << endl;
     
     return 0;
 }

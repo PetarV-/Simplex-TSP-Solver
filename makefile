@@ -1,6 +1,5 @@
 CC = clang++ -Iinclude/
-DEBUG = -g
-CFLAGS = -std=c++11 -O3 -Wall -Wextra -Werror -Weffc++ -Wstrict-aliasing --pedantic $(DEBUG)
+CFLAGS = -std=c++11 -O3 -Wall -Wextra -Werror -Weffc++ -Wstrict-aliasing --pedantic
 
 tsp_solver : src/mst.cpp src/simplex.cpp src/tsp_solver.cpp
 	$(CC) $(CFLAGS) src/mst.cpp src/simplex.cpp src/tsp_solver.cpp -o tsp_solver
