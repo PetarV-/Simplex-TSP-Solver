@@ -23,6 +23,7 @@
 #include <simplex.h>
 
 #define MAX_N 5001
+#define EPS 1e-5
 
 typedef long long lld;
 typedef unsigned long long llu;
@@ -73,7 +74,7 @@ inline pair<int, int> decode_edge(int x)
 
 inline void dump_edge(int x, double val)
 {
-    fprintf(f_graph, "\\draw[edge] (%d) to node[lab]{%g} (%d);\n", decode_edge(x).first, val, decode_edge(x).second);
+    fprintf(f_graph, "\\draw[edge,%s] (%d) to node[lab]{%g} (%d);\n", ((fabs(1.0 - val) < EPS) ? "black" : "red"), decode_edge(x).first, val, decode_edge(x).second);
 }
 
 inline void write_full_edge(int x, int y)
