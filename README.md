@@ -29,7 +29,7 @@ Afterwards, an interactive window will open where one of the following commands 
 - `APPROX_MST`: perform a 2-approximation of the optimal tour using Prim's MST algorithm;
 - `EXIT`: exit the program.
 
-Upon each call to `SOLVE`, detailed information about all the useful iterations (that improve the objective value) will be printed on the terminal. Finally, once a solution has been found, `pdflatex` will be called to regenerate the output PDF file. Finally, if you are using Mac OS X, `qlmanage` will be called for automatically displaying the PDF.
+Upon each call to `SOLVE`, detailed information about all the useful iterations (that improve the objective value) will be printed on the terminal. Once a solution has been found, `pdflatex` will be called to regenerate the output PDF file (`demo/usa.pdf` in this case). Finally, if you are using Mac OS X, `qlmanage` will be called for automatically displaying the PDF.
 
 ## License
 MIT
