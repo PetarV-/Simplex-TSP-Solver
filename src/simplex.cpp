@@ -165,7 +165,7 @@ int Simplex::iterate_simplex()
             }
         }
     }
-    if (isinf(max_constr)) return -1;
+    if (std::isinf(max_constr)) return -1;
     else pivot(best_constr, best_var);
     
     // underflow avoiding: round all entries that are at most 1e-3 away from an integer

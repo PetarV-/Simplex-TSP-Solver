@@ -249,7 +249,7 @@ int main()
             Simplex *s = new Simplex(simp_n, constr_n, A, b, c, 0);
             pair<vector<double>, double> ret = s -> simplex();
             
-            while (isnan(ret.second))
+            while (std::isnan(ret.second))
             {
                 delete s;
                 s = new Simplex(simp_n, constr_n, A, b, c, 0);
@@ -263,7 +263,7 @@ int main()
             
             printf("Simplex subroutine finished!\n");
             
-            if (isinf(ret.second))
+            if (std::isinf(ret.second))
             {
                 if (ret.first[0] == -1) printf("Objective function unbounded!\n");
                 else if (ret.first[0] == -2) printf("Linear program infeasible!\n");
