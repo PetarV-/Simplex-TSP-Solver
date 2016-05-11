@@ -295,14 +295,14 @@ int main()
                 system(cmd_map);
                 
                 printf("Map compiled!\n");
-                
+#ifdef __APPLE__
                 // These shell instructions will work only on OS X
                 sprintf(cmd_prev, "killall qlmanage &> /dev/null; qlmanage -p %s &> /dev/null &", path_pdf);
                 
                 printf("%s\n", cmd_prev);
                 
                 system(cmd_prev);
-
+#endif
             }
             
             print_delimiter();
@@ -498,14 +498,14 @@ int main()
             system(cmd_map);
             
             printf("Map compiled!\n");
-            
+#ifdef __APPLE__
             // These shell instructions will work only on OS X
             sprintf(cmd_prev, "killall qlmanage &> /dev/null; qlmanage -p %s &> /dev/null &", path_pdf);
             
             printf("%s\n", cmd_prev);
             
             system(cmd_prev);
-            
+#endif
             print_delimiter();
         }
         
