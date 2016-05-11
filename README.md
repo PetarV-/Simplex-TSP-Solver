@@ -11,7 +11,7 @@ Simply run
 while in the root directory of the repository, and the executable, `tsp_solver`, will be created therewith.
 
 ## Usage
-In order to interface properly to a demo setting, three parameters need to be given right after executing
+In order to interface properly to a demo setting, four parameters need to be given right after executing
 
     $ ./tsp_solver
 
