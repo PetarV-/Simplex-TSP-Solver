@@ -325,6 +325,8 @@ int Simplex::initialise_simplex()
 // Returns a vector of -1s if unbounded, -2s if infeasible.
 pair<vector<double>, double> Simplex::simplex()
 {
+    printf("Running the Simplex algorithm with %d variables and %d constraints.\n", n, m);
+    
     if (initialise_simplex() == -1)
     {
         return make_pair(vector<double>(n + m, -2), INFINITY);

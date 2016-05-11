@@ -297,7 +297,7 @@ int main()
                 printf("Map compiled!\n");
                 
                 // These shell instructions will work only on OS X
-                sprintf(cmd_prev, "qlmanage -p %s &> /dev/null &", path_pdf);
+                sprintf(cmd_prev, "killall qlmanage &> /dev/null; qlmanage -p %s &> /dev/null &", path_pdf);
                 
                 printf("%s\n", cmd_prev);
                 
@@ -500,7 +500,7 @@ int main()
             printf("Map compiled!\n");
             
             // These shell instructions will work only on OS X
-            sprintf(cmd_prev, "qlmanage -p %s &> /dev/null &", path_pdf);
+            sprintf(cmd_prev, "killall qlmanage &> /dev/null; qlmanage -p %s &> /dev/null &", path_pdf);
             
             printf("%s\n", cmd_prev);
             
