@@ -32,7 +32,7 @@ using namespace std;
 
 char path_adj[150], path_demo[150], file_graph[150], file_map[150];
 char path_graph[150], path_map[150], path_pdf[150];
-FILE *f_adj, *f_graph;
+FILE *f_adj, *f_graph, *f_lp;
 
 char cmd[150];
 char cmd_map[150];
@@ -71,6 +71,31 @@ inline pair<int, int> decode_edge(int x)
     j = x - (((i - 1) * (i - 2)) >> 1) + 1;
     
     return make_pair(i, j);
+}
+
+inline void dump_lp(int n, int m, double **A, double *b, double *c, double v)
+{
+    fprintf(f_lp, "minimise %.2lf ", v);
+    for (int i=0;i<n;i++)
+    {
+        if (fabs(c[i]) > EPS)
+        {
+            fprintf(f_lp, "%c %.2lf * x_{%02d, %02d} ", (c[i] >= 0.0 ? '+' : '-'), fabs(c[i]), decode_edge(i).first, decode_edge(i).second);
+        }
+    }
+    fprintf(f_lp, "\nsubject to\n");
+    for (int i=0;i<m;i++)
+    {
+        fprintf(f_lp, "s_{%03d} = %.2lf ", i, b[i]);
+        for (int j=0;j<n;j++)
+        {
+            if (fabs(A[i][j]) > EPS)
+            {
+                fprintf(f_lp, "%c %.2lf * x_{%02d, %02d} ", (A[i][j] >= 0.0 ? '+' : '-'), fabs(A[i][j]), decode_edge(j).first, decode_edge(j).second);
+            }
+        }
+        fprintf(f_lp, "\n");
+    }
 }
 
 inline void dump_title(double obj, int n, int m, int iter)
@@ -250,6 +275,16 @@ int main()
             {
                 b[i] = bp[i];
             }
+            
+            if ((f_lp = fopen("lp.txt", "w")) == NULL)
+            {
+                printf("Error: LP dump file could not be opened\n");
+                return 4;
+            }
+            
+            dump_lp(simp_n, constr_n, A, b, c, 0);
+            
+            fclose(f_lp);
             
             Simplex *s = new Simplex(simp_n, constr_n, A, b, c, 0);
             auto ret = s -> simplex();
