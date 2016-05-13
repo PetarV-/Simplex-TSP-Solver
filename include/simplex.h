@@ -6,6 +6,7 @@
 #ifndef SIMPLEX
 #define SIMPLEX
 
+#include <tuple>
 #include <vector>
 
 /*
@@ -58,7 +59,7 @@ public:
 
     // Runs the simplex algorithm to optimise the LP.
     // Returns a vector of -1s if unbounded, -2s if infeasible.
-    std::pair<std::vector<double>, double> simplex();
+    std::tuple<std::vector<double>, double, int> simplex();
 };
 
 #endif

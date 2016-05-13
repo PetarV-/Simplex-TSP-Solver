@@ -12,6 +12,7 @@
 #include <set>
 #include <map>
 #include <complex>
+#include <tuple>
 
 #include <simplex.h>
 
@@ -323,19 +324,19 @@ int Simplex::initialise_simplex()
 
 // Runs the simplex algorithm to optimise the LP.
 // Returns a vector of -1s if unbounded, -2s if infeasible.
-pair<vector<double>, double> Simplex::simplex()
+tuple<vector<double>, double, int> Simplex::simplex()
 {
     printf("Running the Simplex algorithm with %d variables and %d constraints.\n", n, m);
     
     if (initialise_simplex() == -1)
     {
-        return make_pair(vector<double>(n + m, -2), INFINITY);
+        return {vector<double>(n + m, -2), INFINITY, total_steps};
     }
     
     int code;
     while (!(code = iterate_simplex()));
     
-    if (code == -1) return make_pair(vector<double>(n + m, -1), INFINITY);
+    if (code == -1) return {vector<double>(n + m, -1), INFINITY, total_steps};
     
     vector<double> ret;
     ret.resize(n + m);
@@ -350,5 +351,5 @@ pair<vector<double>, double> Simplex::simplex()
     
     printf("Finished in %d iterations.\n", total_steps);
     
-    return make_pair(ret, v);
+    return {ret, v, total_steps};
 }

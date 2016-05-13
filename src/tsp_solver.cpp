@@ -73,6 +73,11 @@ inline pair<int, int> decode_edge(int x)
     return make_pair(i, j);
 }
 
+inline void dump_title(double obj, int n, int m, int iter)
+{
+    fprintf(f_graph, "\\node[] (title) at (10, 25) {\\Huge Objective value: $%lf$, $%d$ variables, $%d$ constraints, $%d$ iterations};\n", obj, n, m, iter);
+}
+
 inline void dump_edge(int x, double val)
 {
     fprintf(f_graph, "\\draw[edge,%s] (%d) to node[lab]{%g} (%d);\n", ((fabs(1.0 - val) < EPS) ? "black" : "red"), decode_edge(x).first, val, decode_edge(x).second);
@@ -104,7 +109,7 @@ int main()
     srand(time(NULL));
     
     printf("Linear Programming TSP Solver, implemented by Petar Veličković.\n");
-    printf("Special thanks to Thomas Sauerwald!\n");
+    printf("Thanks to Thomas Sauerwald for the visualisation data!\n");
     print_delimiter();
     
     printf("Enter the path to the file containing the adjacency matrix:\n");
@@ -247,9 +252,9 @@ int main()
             }
             
             Simplex *s = new Simplex(simp_n, constr_n, A, b, c, 0);
-            pair<vector<double>, double> ret = s -> simplex();
+            auto ret = s -> simplex();
             
-            while (std::isnan(ret.second))
+            while (std::isnan(get<1>(ret)))
             {
                 delete s;
                 s = new Simplex(simp_n, constr_n, A, b, c, 0);
@@ -263,15 +268,19 @@ int main()
             
             printf("Simplex subroutine finished!\n");
             
-            if (std::isinf(ret.second))
+            vector<double> xs = get<0>(ret);
+            double val = get<1>(ret);
+            int iters = get<2>(ret);
+            
+            if (std::isinf(val))
             {
-                if (ret.first[0] == -1) printf("Objective function unbounded!\n");
-                else if (ret.first[0] == -2) printf("Linear program infeasible!\n");
+                if (xs[0] == -1) printf("Objective function unbounded!\n");
+                else if (xs[0] == -2) printf("Linear program infeasible!\n");
             }
             
             else
             {
-                printf("Objective value: %lf\n", ret.second);
+                printf("Objective value: %lf\n", val);
                 
                 //for (int i=0;i<simp_n;i++) if (ret.first[i] != 0) cout << ret.first[i] << endl;
         
@@ -281,9 +290,11 @@ int main()
                     return 4;
                 }
                 
+                dump_title(val, simp_n, constr_n, iters);
+                
                 for (int i=0;i<simp_n;i++)
                 {
-                    if (ret.first[i] > 0) dump_edge(i, ret.first[i]);
+                    if (xs[i] > 0) dump_edge(i, xs[i]);
                 }
             
                 fclose(f_graph);
